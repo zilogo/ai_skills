@@ -22,37 +22,27 @@ $ARGUMENTS
 
 ## 三大场景
 
-| 场景 | CLI 命令 | 核心能力 |
-|------|----------|----------|
-| **fin_factor** | `alpha-agent fin_factor` | 因子挖掘与演化 — 假设→代码→回测循环，自动发现 alpha 因子 |
-| **fin_model** | `alpha-agent fin_model` | 模型进化 — 演化 ML 模型用于股票预测 |
-| **fin_quant** | `alpha-agent fin_quant` | 全量化流水线 — 因子挖掘 + 模型进化端到端 |
+| 场景 | 核心能力 |
+|------|----------|
+| **fin_factor** | 因子挖掘与演化 — 假设→代码→回测循环，自动发现 alpha 因子 |
+| **fin_model** | 模型进化 — 演化 ML 模型用于股票预测 |
+| **fin_quant** | 全量化流水线 — 因子挖掘 + 模型进化端到端 |
 
 ---
 
-## 子命令与流程路由
+## 意图识别与流程路由
 
-| 用法 | 流程 | 说明 |
-|------|------|------|
-| `/alpha-agent factor` | 流程一 | 因子挖掘（fin_factor） |
-| `/alpha-agent model` | 流程二 | 模型进化（fin_model） |
-| `/alpha-agent quant` | 流程三 | 端到端量化（fin_quant） |
-| `/alpha-agent status [task_id]` | 流程四 | 查看任务状态 |
-| `/alpha-agent cancel <task_id>` | 流程四 | 取消任务 |
-| `/alpha-agent tasks` | 流程四 | 列出所有任务 |
-| `/alpha-agent factors` | 流程五 | 查看已发现因子 |
-| `/alpha-agent runs` | 流程五 | 查看运行历史 |
-| `/alpha-agent metrics <run_id>` | 流程五 | 查看运行指标 |
-| `/alpha-agent scenarios` | — | 查看可用场景 |
-| `/alpha-agent health` | — | 服务健康检查 |
+从 `$ARGUMENTS`（用户自然语言）自动识别意图，路由到对应流程：
 
-**路由规则**：
-- "挖因子"、"factor"、"因子研究"、"alpha" → 流程一
-- "训练模型"、"model"、"模型进化"、"ML" → 流程二
-- "量化研究"、"quant"、"端到端"、"全流水线" → 流程三
-- "状态"、"进度"、"取消"、"任务列表" → 流程四
-- "看因子"、"因子指标"、"历史"、"runs"、"IC" → 流程五
-- 无明确意图 → 默认流程一（因子挖掘）
+| 用户说法示例 | 流程 | 说明 |
+|-------------|------|------|
+| "挖因子"、"跑一轮因子"、"factor"、"alpha" | 流程一 | 因子挖掘（fin_factor） |
+| "训练模型"、"模型进化"、"model"、"ML" | 流程二 | 模型进化（fin_model） |
+| "量化研究"、"端到端"、"全流水线"、"quant" | 流程三 | 端到端量化（fin_quant） |
+| "查看状态"、"任务进度"、"取消任务 xxx" | 流程四 | 任务管理 |
+| "看看因子"、"因子指标"、"历史记录"、"IC" | 流程五 | 数据浏览 |
+| "健康检查"、"服务状态" | — | 健康检查 |
+| 无明确意图 | 流程一 | 默认因子挖掘 |
 
 ---
 
