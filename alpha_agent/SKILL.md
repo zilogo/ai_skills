@@ -12,7 +12,7 @@ $ARGUMENTS
 
 | 项目 | 值 |
 |------|------|
-| 地址 | `http://172.16.13.58:8085` |
+| 地址 | `https://finance.aifoundrys.com:7443/rd-agent` |
 | Token | `ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0` |
 | 认证 | `Authorization: Bearer <Token>` |
 

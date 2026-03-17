@@ -5,7 +5,7 @@
 | 项目 | 值 |
 |------|------|
 | 服务 | RD-Agent API |
-| 地址 | `http://172.16.13.58:8085` |
+| 地址 | `https://finance.aifoundrys.com:7443/rd-agent` |
 | Token | `ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0` |
 | 认证方式 | `Authorization: Bearer <Token>` |
 | 版本 | 0.1.0 |
@@ -31,7 +31,7 @@
 ## 1. GET /api/v1/health — 健康检查
 
 ```bash
-curl -s http://172.16.13.58:8085/api/v1/health
+curl -s https://finance.aifoundrys.com:7443/rd-agent/api/v1/health
 ```
 
 **返回**：
@@ -49,7 +49,7 @@ curl -s http://172.16.13.58:8085/api/v1/health
 ## 2. GET /api/v1/scenarios — 可用场景列表
 
 ```bash
-curl -s http://172.16.13.58:8085/api/v1/scenarios \
+curl -s https://finance.aifoundrys.com:7443/rd-agent/api/v1/scenarios \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0"
 ```
 
@@ -80,7 +80,7 @@ curl -s http://172.16.13.58:8085/api/v1/scenarios \
 ## 3. POST /api/v1/tasks — 提交研发任务
 
 ```bash
-curl -s -X POST http://172.16.13.58:8085/api/v1/tasks \
+curl -s -X POST https://finance.aifoundrys.com:7443/rd-agent/api/v1/tasks \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0" \
   -H "Content-Type: application/json" \
   -d '{
@@ -115,7 +115,7 @@ curl -s -X POST http://172.16.13.58:8085/api/v1/tasks \
 ## 4. GET /api/v1/tasks — 列出所有任务
 
 ```bash
-curl -s http://172.16.13.58:8085/api/v1/tasks \
+curl -s https://finance.aifoundrys.com:7443/rd-agent/api/v1/tasks \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0"
 ```
 
@@ -148,7 +148,7 @@ curl -s http://172.16.13.58:8085/api/v1/tasks \
 ## 5. GET /api/v1/tasks/{task_id} — 查询任务状态
 
 ```bash
-curl -s http://172.16.13.58:8085/api/v1/tasks/473ad6afcadf41d189ecbc7b13ab494a \
+curl -s https://finance.aifoundrys.com:7443/rd-agent/api/v1/tasks/473ad6afcadf41d189ecbc7b13ab494a \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0"
 ```
 
@@ -204,7 +204,7 @@ pending → running → completed
 ## 6. POST /api/v1/tasks/{task_id}/cancel — 取消任务
 
 ```bash
-curl -s -X POST http://172.16.13.58:8085/api/v1/tasks/6b74768f59c8498fbc9641a1e2f39416/cancel \
+curl -s -X POST https://finance.aifoundrys.com:7443/rd-agent/api/v1/tasks/6b74768f59c8498fbc9641a1e2f39416/cancel \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0"
 ```
 
@@ -225,7 +225,7 @@ curl -s -X POST http://172.16.13.58:8085/api/v1/tasks/6b74768f59c8498fbc9641a1e2
 ## 7. GET /api/v1/factors — 列出已发现因子
 
 ```bash
-curl -s http://172.16.13.58:8085/api/v1/factors \
+curl -s https://finance.aifoundrys.com:7443/rd-agent/api/v1/factors \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0"
 ```
 
@@ -262,7 +262,7 @@ curl -s http://172.16.13.58:8085/api/v1/factors \
 ## 8. GET /api/v1/runs — 列出运行历史
 
 ```bash
-curl -s http://172.16.13.58:8085/api/v1/runs \
+curl -s https://finance.aifoundrys.com:7443/rd-agent/api/v1/runs \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0"
 ```
 
@@ -293,7 +293,7 @@ curl -s http://172.16.13.58:8085/api/v1/runs \
 ## 9. GET /api/v1/runs/{run_id}/metrics — 运行指标详情
 
 ```bash
-curl -s http://172.16.13.58:8085/api/v1/runs/2026-03-14_03-56-09-088906/metrics \
+curl -s https://finance.aifoundrys.com:7443/rd-agent/api/v1/runs/2026-03-14_03-56-09-088906/metrics \
   -H "Authorization: Bearer ayS92YuxbW5dVfj6hcXLdTnM7RJGZbylbi7sNcOCAI0"
 ```
 

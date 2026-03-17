@@ -10,14 +10,14 @@ $ARGUMENTS
 
 ## 四个服务的定位
 
-| 服务 | 端口 | 核心价值 |
+| 服务 | 路径 | 核心价值 |
 |------|------|----------|
-| **AI Hedge Fund** | 8082 | 自动化全流程引擎：18 位投资大师量化信号 + LLM 每日动态决策回测 |
-| **TradingAgents** | 8080 | 深度文本分析：技术/情绪/新闻/基本面四维报告 + 多空辩论，提供具体价格参数 |
-| **回测引擎** | 8090 | 自定义策略回测引擎：用户上传 Python 策略代码，固定规则执行 |
-| **Alpaca Trading** | 8083 | 模拟盘交易执行：下单/撤单/持仓/账户/行情 |
+| **AI Hedge Fund** | /aihedgefund | 自动化全流程引擎：18 位投资大师量化信号 + LLM 每日动态决策回测 |
+| **TradingAgents** | /tradingagents | 深度文本分析：技术/情绪/新闻/基本面四维报告 + 多空辩论，提供具体价格参数 |
+| **回测引擎** | /ziplime | 自定义策略回测引擎：用户上传 Python 策略代码，固定规则执行 |
+| **Alpaca Trading** | /alpacatrading | 模拟盘交易执行：下单/撤单/持仓/账户/行情 |
 
-所有服务在 `172.16.13.58`，Bearer Token 认证。完整 API 文档见 `stock-agent/references/api-details.md`。
+所有服务在 `https://finance.aifoundrys.com:7443`，Bearer Token 认证。完整 API 文档见 `stock-agent/references/api-details.md`。
 
 ---
 
